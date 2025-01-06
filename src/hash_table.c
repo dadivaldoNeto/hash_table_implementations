@@ -6,7 +6,7 @@
 /*   By: netomm <netooff@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 00:46:51 by netomm            #+#    #+#             */
-/*   Updated: 2025/01/06 01:26:16 by netomm           ###   ########.fr       */
+/*   Updated: 2025/01/06 01:53:11 by netomm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "hash_table.h"
@@ -64,19 +64,20 @@ ht_hash_table	*ht_new(void)
 		return (ht);
 	ht->size = 10;
 	ht->count = 0;
-	ht->ht_items = calloc(size_t(ht->size), sizeof(ht_item *));
+	ht->ht_items = calloc((size_t)ht->size, sizeof(ht_item *));
 	return (ht);
 }
 
 void	ht_delete(ht_hash_table *ht)
 {
-	int	i;
+	unsigned int	i;
 
-	i = -1;
-	while (++i < ht->size)
+	i = 0;
+	while (i < ht->size)
 	{
 		if (!ht->ht_items[i])
 			ht_delete_item(ht->ht_items[i]);
+		i++;
 	}
 	free(ht->ht_items);
 	free(ht);
