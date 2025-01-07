@@ -6,37 +6,10 @@
 /*   By: netomm <netooff@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 00:46:51 by netomm            #+#    #+#             */
-/*   Updated: 2025/01/06 01:53:11 by netomm           ###   ########.fr       */
+/*   Updated: 2025/01/07 14:07:41 by netomm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "hash_table.h"
-
-int	ft_strlen(char *s)
-{
-	int	i;
-
-	i = -1;
-	while (s[++i])
-		;
-	return (i);
-}
-
-char	*ft_strdup(char *str)
-{
-	char	*tmp;
-	int		length;
-	int		i;
-
-	i = -1;
-	length = ft_strlen(str);
-	tmp = malloc (sizeof(char) * (length + 1));
-	if (!tmp)
-		return (tmp);
-	while (*str)
-		tmp[++i] = *str++;
-	tmp[length] = *str;
-	return (tmp);
-}
 
 static ht_item	*ht_new_item(char *k, char *v)
 {
