@@ -6,14 +6,14 @@
 /*   By: netomm <netooff@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 01:19:38 by netomm            #+#    #+#             */
-/*   Updated: 2025/01/06 01:55:38 by netomm           ###   ########.fr       */
+/*   Updated: 2025/01/07 14:44:54 by netomm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "hash_table.h"
 
 int	main(void)
 {
-	ht_hash_table *ht = ht_new();
-	ht_delete(ht);
+	ht_hash_table *ht = ft_ht_new();
+	ft_ht_delete(ht);
 	return (0);
 }

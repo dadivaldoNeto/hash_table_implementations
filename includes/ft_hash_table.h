@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hash_table.h                                       :+:      :+:    :+:   */
+/*   ft_hash_table.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: netomm <netooff@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 00:41:09 by netomm            #+#    #+#             */
-/*   Updated: 2025/01/06 01:29:47 by netomm           ###   ########.fr       */
+/*   Updated: 2025/01/07 15:04:05 by netomm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef HASH_TABLE_H
-# define HASH_TABLE_H
+#ifndef FT_HASH_TABLE_H
+# define FT_HASH_TABLE_H
 
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
 
-typedef struct
+typedef struct s_item
 {
 	char	*key;
 	char	*value;
-} ht_item;
+}	t_ht_item;
 
-typedef struct
+typedef struct s_hash_table
 {
 	unsigned int	size;
 	unsigned int	count;
-	ht_item	**ht_items;
-} ht_hash_table;
+	t_ht_item		**ht_items;
+}	t_hash_table;
 
-ht_hash_table	*ht_new(void);
-void	ht_delete(ht_hash_table *ht);
+t_hash_table	*ft_ht_new(void);
+
+void			ft_ht_delete(t_hash_table *ht);
+
+t_ht_item		*ft_ht_new_item(char *k, char *v);
 
 #endif
