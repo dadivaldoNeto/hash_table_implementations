@@ -6,10 +6,11 @@
 /*   By: netomm <netooff@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 00:46:51 by netomm            #+#    #+#             */
-/*   Updated: 2025/01/07 14:51:35 by netomm           ###   ########.fr       */
+/*   Updated: 2025/01/07 22:00:23 by netomm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "hash_table.h"
+#include "ft_hash_table.h"
+#include "ft_lib.h"
 
 t_ht_item	*ft_ht_new_item(char *k, char *v)
 {

@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lib.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: netomm <netooff@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/06 01:19:38 by netomm            #+#    #+#             */
-/*   Updated: 2025/01/07 22:18:06 by netomm           ###   ########.fr       */
+/*   Created: 2025/01/07 21:38:33 by netomm            #+#    #+#             */
+/*   Updated: 2025/01/07 21:40:00 by netomm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "ft_hash_table.h"
-#include "ft_lib.h"
 
-int	main(void)
-{
-	t_hash_table *ht = ft_ht_new();
-	ft_ht_delete(ht);
-	return (0);
-}
+#ifndef FT_LIB_H
+# define FT_LIB_H
+# include <stdlib.h>
+
+int		ft_strlen(char *s);
+char	*ft_strdup(char *s);
+
+#endif
