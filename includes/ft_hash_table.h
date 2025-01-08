@@ -6,7 +6,7 @@
 /*   By: netomm <netooff@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 00:41:09 by netomm            #+#    #+#             */
-/*   Updated: 2025/01/07 15:04:05 by netomm           ###   ########.fr       */
+/*   Updated: 2025/01/08 14:09:24 by netomm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FT_HASH_TABLE_H
@@ -35,4 +35,5 @@ void			ft_ht_delete(t_hash_table *ht);
 
 t_ht_item		*ft_ht_new_item(char *k, char *v);
 
+int				ft_hashing(char *string, const int a, const int lim);
 #endif

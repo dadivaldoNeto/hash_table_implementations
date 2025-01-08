@@ -6,7 +6,7 @@
 /*   By: netomm <netooff@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 11:57:59 by netomm            #+#    #+#             */
-/*   Updated: 2025/01/08 14:04:48 by netomm           ###   ########.fr       */
+/*   Updated: 2025/01/08 14:10:29 by netomm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_hash_table.h"
@@ -34,7 +34,7 @@ int	ft_hashing(char *string, const int a, const int lim)
 	i = -1;
 	while (++i < len)
 	{
-		hash_code += ft_two_power(a, i + 1) * string[i];
+		hash_code += ft_two_power(a, len - (i + 1)) * string[i];
 		hash_code = hash_code % lim;
 	}
 	return (hash_code);
