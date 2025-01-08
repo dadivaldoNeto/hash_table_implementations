@@ -6,7 +6,7 @@
 #    By: netomm <netooff@student.42.fr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/06 00:04:23 by netomm            #+#    #+#              #
-#    Updated: 2025/01/07 22:22:12 by netomm           ###   ########.fr        #
+#    Updated: 2025/01/08 13:58:46 by netomm           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 CC = gcc
@@ -17,8 +17,8 @@ SRC_F = src
 BLD_F = build
 CFLAGS = -Wall -Wextra -Werror -g
 NAME = dictionary
-SRCS = $(SRC_F)/ft_hash_table.c $(SRC_F)/ft_prime.c \
-       $(SRC_F)/main.c
+SRCS = $(SRC_F)/ft_hash_table.c	$(SRC_F)/ft_prime.c \
+       $(SRC_F)/main.c	$(SRC_F)/ft_hashing.c
 OBJS = $(patsubst $(SRC_F)/%.c, $(BLD_F)/%.o, $(SRCS))
 
 all: $(NAME)
