@@ -6,26 +6,40 @@
 /*   By: netomm <netooff@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 01:19:38 by netomm            #+#    #+#             */
-/*   Updated: 2025/01/09 01:03:45 by netomm           ###   ########.fr       */
+/*   Updated: 2025/01/09 23:57:49 by netomm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_hash_table.h"
 #include "ft_lib.h"
 
-#define LIM  50
+void	ft_error(void)
+{
+	printf("Usage: \n");
+	printf("./[program_name] [key] [value]\n");
+}
 
 int	main(int ac, char **av)
 {
-	/* Some test cases
-	int	i;
-	int	result;
+	t_hash_table	*ht;
+	int		i;
 
-	result = 0;
-	i = 0;
-	while (++i < ac)
+	if (ac != 3)
 	{
-		result = ft_get_hash_code(av[i], 1, LIM);
-		printf("%d\n", result);
-	}*/
+		ft_error();
+		return (1);
+	}
+	i = -1;
+	ht = ft_ht_new();
+	ft_ht_insert(ht, av[1], av[2]);
+	printf("There are %d maps\n", ht->count);
+	while (++i < ht->size)
+	{
+		if (ht->ht_items[i])
+		{
+			printf("The key is - %s\nThe hash index is %d\n", ht->ht_items[i]->key, i);
+			printf("The value is - %s\n", ht->ht_items[i]->value);
+		}
+	}
+	ft_ht_delete(ht);
 	return (0);
 }
