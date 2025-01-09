@@ -6,7 +6,7 @@
 /*   By: netomm <netooff@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 00:46:51 by netomm            #+#    #+#             */
-/*   Updated: 2025/01/07 22:00:23 by netomm           ###   ########.fr       */
+/*   Updated: 2025/01/09 00:58:10 by netomm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_hash_table.h"
@@ -39,7 +39,7 @@ t_hash_table	*ft_ht_new(void)
 	ht = malloc(sizeof(t_hash_table));
 	if (ht)
 	{
-		ht->size = 10;
+		ht->size = 50;
 		ht->count = 0;
 		ht->ht_items = calloc((size_t)ht->size, sizeof(t_ht_item *));
 	}
@@ -48,7 +48,7 @@ t_hash_table	*ft_ht_new(void)
 
 void	ft_ht_delete(t_hash_table *ht)
 {
-	unsigned int	i;
+	int	i;
 
 	i = -1;
 	while (++i < ht->size)

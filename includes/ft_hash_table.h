@@ -6,7 +6,7 @@
 /*   By: netomm <netooff@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 00:41:09 by netomm            #+#    #+#             */
-/*   Updated: 2025/01/08 14:09:24 by netomm           ###   ########.fr       */
+/*   Updated: 2025/01/09 00:55:35 by netomm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FT_HASH_TABLE_H
@@ -16,6 +16,10 @@
 # include <stdlib.h>
 # include <stdio.h>
 
+# define PRIME_1 53
+# define PRIME_2 47
+
+
 typedef struct s_item
 {
 	char	*key;
@@ -24,9 +28,9 @@ typedef struct s_item
 
 typedef struct s_hash_table
 {
-	unsigned int	size;
+	int			size;
 	unsigned int	count;
-	t_ht_item		**ht_items;
+	t_ht_item	**ht_items;
 }	t_hash_table;
 
 t_hash_table	*ft_ht_new(void);
@@ -35,5 +39,5 @@ void			ft_ht_delete(t_hash_table *ht);
 
 t_ht_item		*ft_ht_new_item(char *k, char *v);
 
-int				ft_hashing(char *string, const int a, const int lim);
+int				ft_get_hash_code(char *string, const int attempt, const int hash_size);
 #endif
