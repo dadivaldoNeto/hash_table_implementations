@@ -6,11 +6,13 @@
 /*   By: netomm <netooff@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 19:18:23 by netomm            #+#    #+#             */
-/*   Updated: 2025/01/10 22:33:47 by netomm           ###   ########.fr       */
+/*   Updated: 2025/01/10 23:43:23 by netomm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_hash_table.h"
 #include "ft_lib.h"
+
+#define HT_DELE_ITEM {}
 
 void	ft_ht_insert(t_hash_table *ht, char *key, char *value)
 {
@@ -51,4 +53,28 @@ char	*ft_ht_search(t_hash_table *ht, char *key)
 		tmp = ht->ht_items[index];
 	}
 	return (NULL);
+}
+
+void	ft_delete(t_hash_table *ht, char *key)
+{
+	int		index;
+	int		i;
+	t_ht_item	*item;
+
+	i = 0;
+	index = ft_get_hash_code(key, i++, ht->size);
+	item = ht->ht_items[index];
+	while (item)
+	{
+		if (!ft_strcmp(key, item->key))
+		{
+			ft_ht_delete_item(item);
+			ht->ht_items[index] = NULL;
+			ht->count--;
+			return ;
+		}
+		index = ft_get_hash_code(key, i++, ht->size);	
+		item = ht->ht_items[index];
+	}
+	return ;
 }
