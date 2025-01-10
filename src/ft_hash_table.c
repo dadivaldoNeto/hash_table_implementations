@@ -6,7 +6,7 @@
 /*   By: netomm <netooff@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 00:46:51 by netomm            #+#    #+#             */
-/*   Updated: 2025/01/09 00:58:10 by netomm           ###   ########.fr       */
+/*   Updated: 2025/01/10 22:11:32 by netomm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_hash_table.h"
@@ -53,7 +53,7 @@ void	ft_ht_delete(t_hash_table *ht)
 	i = -1;
 	while (++i < ht->size)
 	{
-		if (!ht->ht_items[i])
+		if (ht->ht_items[i])
 			ft_ht_delete_item(ht->ht_items[i]);
 	}
 	free(ht->ht_items);

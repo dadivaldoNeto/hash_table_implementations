@@ -1,0 +1,38 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile_lib                                       :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: netomm <netooff@student.42.fr>             +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/01/10 22:44:22 by netomm            #+#    #+#              #
+#    Updated: 2025/01/10 23:07:35 by netomm           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+CC = gcc
+STLIB = ar -rcs
+.RECIPEPREFIX = >
+CFLAGS = -Wall -Wextra -Werror -c
+INCDR = includes
+SRC = src/ft_strcmp.c src/ft_strlen.c \
+      src/ft_strdup.c
+OBJS = $(patsubst src/%.c, build/%.o, $(SRC)) 
+
+TARGET = libft_lib.a
+
+all: libs/$(TARGET)
+
+libs/$(TARGET): $(OBJS)
+> $(STLIB) libs/$(TARGET) $^
+
+build/%.o:src/%.c
+> $(CC) $(CFLAGS) $< -o $@ -I $(INCDR)
+
+clean:
+> rm -f $(OBJS)
+
+fclean: | libs/$(TARGET)
+> rm -f libs/$(TARGET)
+
+.PHONY: fclean all
+

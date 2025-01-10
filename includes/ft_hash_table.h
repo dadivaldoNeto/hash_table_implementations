@@ -6,7 +6,7 @@
 /*   By: netomm <netooff@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 00:41:09 by netomm            #+#    #+#             */
-/*   Updated: 2025/01/09 23:18:05 by netomm           ###   ########.fr       */
+/*   Updated: 2025/01/10 23:09:40 by netomm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FT_HASH_TABLE_H
@@ -41,5 +41,5 @@ t_ht_item		*ft_ht_new_item(char *k, char *v);
 
 int				ft_get_hash_code(char *string, const int attempt, const int hash_size);
 
-int				ft_ht_insert(t_hash_table *ht, char *key, char *value);
+void			ft_ht_insert(t_hash_table *ht, char *key, char *value);
 #endif
