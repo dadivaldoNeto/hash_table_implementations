@@ -6,7 +6,7 @@
 /*   By: netomm <netooff@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 01:19:38 by netomm            #+#    #+#             */
-/*   Updated: 2025/01/09 23:57:49 by netomm           ###   ########.fr       */
+/*   Updated: 2025/01/11 12:18:42 by netomm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_hash_table.h"
@@ -31,7 +31,7 @@ int	main(int ac, char **av)
 	i = -1;
 	ht = ft_ht_new();
 	ft_ht_insert(ht, av[1], av[2]);
-	printf("There are %d maps\n", ht->count);
+	printf("There are %d maps\n ", ht->count);
 	while (++i < ht->size)
 	{
 		if (ht->ht_items[i])
