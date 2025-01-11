@@ -6,7 +6,7 @@
 /*   By: netomm <netooff@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 01:19:38 by netomm            #+#    #+#             */
-/*   Updated: 2025/01/11 12:42:57 by netomm           ###   ########.fr       */
+/*   Updated: 2025/01/11 12:47:50 by netomm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_hash_table.h"
@@ -14,7 +14,7 @@
 
 void	ft_error(void)
 {
-	printf("Usage: \n");
+	printf("Usage:\n");
 	printf("./[program_name] [key] [value]\n");
 }
 
