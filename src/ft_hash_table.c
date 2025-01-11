@@ -6,11 +6,13 @@
 /*   By: netomm <netooff@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 00:46:51 by netomm            #+#    #+#             */
-/*   Updated: 2025/01/10 22:11:32 by netomm           ###   ########.fr       */
+/*   Updated: 2025/01/11 14:00:54 by netomm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_hash_table.h"
+#include "ft_prime.h"
 #include "ft_lib.h"
+#include <stdio.h>
 
 t_ht_item	*ft_ht_new_item(char *k, char *v)
 {
@@ -32,18 +34,22 @@ void	ft_ht_delete_item(t_ht_item *ht)
 	free(ht);
 }
 
-t_hash_table	*ft_ht_new(void)
+static t_hash_table	*ft_ht_new_sized(const int base_size)
 {
 	t_hash_table	*ht;
 
-	ht = malloc(sizeof(t_hash_table));
-	if (ht)
-	{
-		ht->size = 50;
-		ht->count = 0;
-		ht->ht_items = calloc((size_t)ht->size, sizeof(t_ht_item *));
-	}
+	ht = xmalloc(sizeof(t_hash_table);
+	ht->base_size = base_size;
+	ht->size = next_prime(base_size);
+
+	ht->count = 0;
+	ht->ht_items = xcalloc((size_t)ht->size, sizeof(t_ht_item *));
 	return (ht);
+}
+
+t_hash_table	*ft_ht_new(void)
+{
+	return (ft_ht_new_sized(BASE_SIZE));
 }
 
 void	ft_ht_delete(t_hash_table *ht)

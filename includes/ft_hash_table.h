@@ -6,7 +6,7 @@
 /*   By: netomm <netooff@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 00:41:09 by netomm            #+#    #+#             */
-/*   Updated: 2025/01/10 23:42:33 by netomm           ###   ########.fr       */
+/*   Updated: 2025/01/11 14:04:12 by netomm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FT_HASH_TABLE_H
@@ -15,10 +15,12 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <sys/types.h>
+# include <sys/errno.h>
 
 # define PRIME_1 53
 # define PRIME_2 47
-
+# define BASE_SIZE 19
 
 typedef struct s_item
 {
@@ -29,6 +31,7 @@ typedef struct s_item
 typedef struct s_hash_table
 {
 	int			size;
+	int			base_size;
 	unsigned int	count;
 	t_ht_item	**ht_items;
 }	t_hash_table;

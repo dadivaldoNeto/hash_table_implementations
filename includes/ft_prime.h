@@ -1,38 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_prime.c                                         :+:      :+:    :+:   */
+/*   ft_prime.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: netomm <netooff@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/11 13:03:30 by netomm            #+#    #+#             */
-/*   Updated: 2025/01/11 13:44:51 by netomm           ###   ########.fr       */
+/*   Created: 2025/01/11 13:58:53 by netomm            #+#    #+#             */
+/*   Updated: 2025/01/11 13:59:45 by netomm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "ft_hash_table.h"
-#include "ft_prime.h"
+#ifndef FT_PRIME_H
+# define FT_PRIME_H
 
-static int	is_prime(const int x)
-{
-	int	i;
+int	next_prime(int x);
 
-	if (x < 2)
-		return (0);
-	if (x < 3)
-		return (1);
-	i = 3;
-	while (i * i <= x)
-	{
-		if (!(n % i))
-			return (0);
-		i += 2;
-	}
-	return (1);
-}
-
-int	next_prime(int x)
-{
-	while (is_prime(x) != 1)
-		x++;
-	return (x);
-}
+#endif
