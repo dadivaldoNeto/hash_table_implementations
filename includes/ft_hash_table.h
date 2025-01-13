@@ -6,7 +6,7 @@
 /*   By: netomm <netooff@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 00:41:09 by netomm            #+#    #+#             */
-/*   Updated: 2025/01/11 14:04:12 by netomm           ###   ########.fr       */
+/*   Updated: 2025/01/13 14:03:07 by netomm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FT_HASH_TABLE_H
@@ -15,8 +15,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
-# include <sys/types.h>
-# include <sys/errno.h>
 
 # define PRIME_1 53
 # define PRIME_2 47
@@ -47,4 +45,6 @@ int				ft_get_hash_code(char *string, const int attempt, const int hash_size);
 void			ft_ht_insert(t_hash_table *ht, char *key, char *value);
 
 void	ft_ht_delete_item(t_ht_item *ht);
+
+void	resize(t_hash_table *ht);
 #endif

@@ -6,7 +6,7 @@
 /*   By: netomm <netooff@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 13:03:30 by netomm            #+#    #+#             */
-/*   Updated: 2025/01/11 13:44:51 by netomm           ###   ########.fr       */
+/*   Updated: 2025/01/13 14:10:36 by netomm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_hash_table.h"
@@ -23,7 +23,7 @@ static int	is_prime(const int x)
 	i = 3;
 	while (i * i <= x)
 	{
-		if (!(n % i))
+		if (!(x % i))
 			return (0);
 		i += 2;
 	}

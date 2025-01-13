@@ -6,7 +6,7 @@
 /*   By: netomm <netooff@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 19:18:23 by netomm            #+#    #+#             */
-/*   Updated: 2025/01/10 23:43:23 by netomm           ###   ########.fr       */
+/*   Updated: 2025/01/11 23:52:14 by netomm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_hash_table.h"
@@ -76,5 +76,4 @@ void	ft_delete(t_hash_table *ht, char *key)
 		index = ft_get_hash_code(key, i++, ht->size);	
 		item = ht->ht_items[index];
 	}
-	return ;
 }
